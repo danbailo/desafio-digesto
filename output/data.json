@@ -1,0 +1,72 @@
+[
+    {
+        "Storage": "10 GB",
+        "CPU": "1 CPU",
+        "Memory": "512 MB",
+        "Bandwidth": "0.50 TB",
+        "Price/mo": "$2.50"
+    },
+    {
+        "Storage": "10 GB",
+        "CPU": "1 CPU",
+        "Memory": "512 MB",
+        "Bandwidth": "0.50 TB",
+        "Price/mo": "$3.50"
+    },
+    {
+        "Storage": "25 GB",
+        "CPU": "1 CPU",
+        "Memory": "1024 MB",
+        "Bandwidth": "1 TB",
+        "Price/mo": "$5"
+    },
+    {
+        "Storage": "55 GB",
+        "CPU": "1 CPU",
+        "Memory": "2 GB",
+        "Bandwidth": "2 TB",
+        "Price/mo": "$10"
+    },
+    {
+        "Storage": "80 GB",
+        "CPU": "2 CPU",
+        "Memory": "4 GB",
+        "Bandwidth": "3 TB",
+        "Price/mo": "$20"
+    },
+    {
+        "Storage": "160 GB",
+        "CPU": "4 CPU",
+        "Memory": "8 GB",
+        "Bandwidth": "4 TB",
+        "Price/mo": "$40"
+    },
+    {
+        "Storage": "320 GB",
+        "CPU": "6 CPU",
+        "Memory": "16 GB",
+        "Bandwidth": "5 TB",
+        "Price/mo": "$80"
+    },
+    {
+        "Storage": "640 GB",
+        "CPU": "8 CPU",
+        "Memory": "32 GB",
+        "Bandwidth": "6 TB",
+        "Price/mo": "$160"
+    },
+    {
+        "Storage": "1280 GB",
+        "CPU": "16 CPU",
+        "Memory": "64 GB",
+        "Bandwidth": "10 TB",
+        "Price/mo": "$320"
+    },
+    {
+        "Storage": "1600 GB",
+        "CPU": "24 CPU",
+        "Memory": "96 GB",
+        "Bandwidth": "15 TB",
+        "Price/mo": "$640"
+    }
+]
