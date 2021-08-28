@@ -16,3 +16,11 @@ class Scraper:
             storage, cpu, memory, bandwidth, price = cel.find_all("strong")
             self.data.append({"Storage":storage.text, "CPU":cpu.text, "Memory":memory.text, "Bandwidth":bandwidth.text, "Price/mo":price.text})
 
+    def digitalocean(self):
+        #https://www.digitalocean.com/page-data/pricing/page-data.json
+
+        target = "https://www.digitalocean.com/pricing#droplet"
+        response = requests.get(target)
+        soup = BeautifulSoup(response.text, "html.parser")
+
+        print(soup)
