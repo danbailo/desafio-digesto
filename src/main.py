@@ -20,6 +20,6 @@ if __name__ == "__main__":
     rows = table.find_all("div", attrs=({"class":"pt__row-content"}))
     for cel in rows:
         storage, cpu, memory, bandwidth, price = cel.find_all("strong")
-        data.append((storage.text, cpu.text, memory.text, bandwidth.text, price.text))
+        data.append({"Storage":storage.text, "CPU":cpu.text, "Memory":memory.text, "Bandwidth":bandwidth.text, "Price/mo":price.text})
 
     args.cmd(data)
