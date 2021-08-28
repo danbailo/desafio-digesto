@@ -1,7 +1,16 @@
 from bs4 import BeautifulSoup
 import requests
+from utils import print_data, save_csv, save_json
+import argparse
 
 if __name__ == "__main__":
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--print', action="store_const", const=print_data, dest="cmd")
+    parser.add_argument('--save_csv', action="store_const", const=save_csv, dest="cmd")
+    parser.add_argument('--save_json', action="store_const", const=save_json, dest="cmd")
+    args = parser.parse_args()
+
     target = "https://www.vultr.com/products/cloud-compute/#pricing"
     response = requests.get(target)
     soup = BeautifulSoup(response.text, "html.parser")
@@ -13,4 +22,4 @@ if __name__ == "__main__":
         storage, cpu, memory, bandwidth, price = cel.find_all("strong")
         data.append((storage.text, cpu.text, memory.text, bandwidth.text, price.text))
 
-    print(data)
+    args.cmd(data)
