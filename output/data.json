@@ -1,72 +1,114 @@
 [
     {
-        "Storage": "10 GB",
-        "CPU": "1 CPU",
-        "Memory": "512 MB",
-        "Bandwidth": "0.50 TB",
-        "Price/mo": "$2.50"
+        "CPU / VCPU": "1 CPU",
+        "MEMORY": "512 MB",
+        "STORAGE/SSD DISK": "10 GB",
+        "BANDWIDTH / TRANSFER": "0.50 TB",
+        "PRICE [ $/mo ]": "$2.50"
     },
     {
-        "Storage": "10 GB",
-        "CPU": "1 CPU",
-        "Memory": "512 MB",
-        "Bandwidth": "0.50 TB",
-        "Price/mo": "$3.50"
+        "CPU / VCPU": "1 CPU",
+        "MEMORY": "512 MB",
+        "STORAGE/SSD DISK": "10 GB",
+        "BANDWIDTH / TRANSFER": "0.50 TB",
+        "PRICE [ $/mo ]": "$3.50"
     },
     {
-        "Storage": "25 GB",
-        "CPU": "1 CPU",
-        "Memory": "1024 MB",
-        "Bandwidth": "1 TB",
-        "Price/mo": "$5"
+        "CPU / VCPU": "1 CPU",
+        "MEMORY": "1024 MB",
+        "STORAGE/SSD DISK": "25 GB",
+        "BANDWIDTH / TRANSFER": "1 TB",
+        "PRICE [ $/mo ]": "$5"
     },
     {
-        "Storage": "55 GB",
-        "CPU": "1 CPU",
-        "Memory": "2 GB",
-        "Bandwidth": "2 TB",
-        "Price/mo": "$10"
+        "CPU / VCPU": "1 CPU",
+        "MEMORY": "2 GB",
+        "STORAGE/SSD DISK": "55 GB",
+        "BANDWIDTH / TRANSFER": "2 TB",
+        "PRICE [ $/mo ]": "$10"
     },
     {
-        "Storage": "80 GB",
-        "CPU": "2 CPU",
-        "Memory": "4 GB",
-        "Bandwidth": "3 TB",
-        "Price/mo": "$20"
+        "CPU / VCPU": "2 CPU",
+        "MEMORY": "4 GB",
+        "STORAGE/SSD DISK": "80 GB",
+        "BANDWIDTH / TRANSFER": "3 TB",
+        "PRICE [ $/mo ]": "$20"
     },
     {
-        "Storage": "160 GB",
-        "CPU": "4 CPU",
-        "Memory": "8 GB",
-        "Bandwidth": "4 TB",
-        "Price/mo": "$40"
+        "CPU / VCPU": "4 CPU",
+        "MEMORY": "8 GB",
+        "STORAGE/SSD DISK": "160 GB",
+        "BANDWIDTH / TRANSFER": "4 TB",
+        "PRICE [ $/mo ]": "$40"
     },
     {
-        "Storage": "320 GB",
-        "CPU": "6 CPU",
-        "Memory": "16 GB",
-        "Bandwidth": "5 TB",
-        "Price/mo": "$80"
+        "CPU / VCPU": "6 CPU",
+        "MEMORY": "16 GB",
+        "STORAGE/SSD DISK": "320 GB",
+        "BANDWIDTH / TRANSFER": "5 TB",
+        "PRICE [ $/mo ]": "$80"
     },
     {
-        "Storage": "640 GB",
-        "CPU": "8 CPU",
-        "Memory": "32 GB",
-        "Bandwidth": "6 TB",
-        "Price/mo": "$160"
+        "CPU / VCPU": "8 CPU",
+        "MEMORY": "32 GB",
+        "STORAGE/SSD DISK": "640 GB",
+        "BANDWIDTH / TRANSFER": "6 TB",
+        "PRICE [ $/mo ]": "$160"
     },
     {
-        "Storage": "1280 GB",
-        "CPU": "16 CPU",
-        "Memory": "64 GB",
-        "Bandwidth": "10 TB",
-        "Price/mo": "$320"
+        "CPU / VCPU": "16 CPU",
+        "MEMORY": "64 GB",
+        "STORAGE/SSD DISK": "1280 GB",
+        "BANDWIDTH / TRANSFER": "10 TB",
+        "PRICE [ $/mo ]": "$320"
     },
     {
-        "Storage": "1600 GB",
-        "CPU": "24 CPU",
-        "Memory": "96 GB",
-        "Bandwidth": "15 TB",
-        "Price/mo": "$640"
+        "CPU / VCPU": "24 CPU",
+        "MEMORY": "96 GB",
+        "STORAGE/SSD DISK": "1600 GB",
+        "BANDWIDTH / TRANSFER": "15 TB",
+        "PRICE [ $/mo ]": "$640"
+    },
+    {
+        "CPU / VCPU": "1vCPU",
+        "MEMORY": "1GB",
+        "STORAGE/SSD DISK": "25GB",
+        "BANDWIDTH / TRANSFER": "1TB",
+        "PRICE [ $/mo ]": "$6.00"
+    },
+    {
+        "CPU / VCPU": "1vCPU",
+        "MEMORY": "2GB",
+        "STORAGE/SSD DISK": "50GB",
+        "BANDWIDTH / TRANSFER": "2TB",
+        "PRICE [ $/mo ]": "$12.00"
+    },
+    {
+        "CPU / VCPU": "2vCPUs",
+        "MEMORY": "2GB",
+        "STORAGE/SSD DISK": "60GB",
+        "BANDWIDTH / TRANSFER": "3TB",
+        "PRICE [ $/mo ]": "$18.00"
+    },
+    {
+        "CPU / VCPU": "2vCPUs",
+        "MEMORY": "4GB",
+        "STORAGE/SSD DISK": "80GB",
+        "BANDWIDTH / TRANSFER": "4TB",
+        "PRICE [ $/mo ]": "$24.00"
+    },
+    {
+        "CPU / VCPU": "4vCPUs",
+        "MEMORY": "8GB",
+        "STORAGE/SSD DISK": "160GB",
+        "BANDWIDTH / TRANSFER": "5TB",
+        "PRICE [ $/mo ]": "$48.00"
+    },
+    {
+        "CPU / VCPU": "8vCPUs",
+        "MEMORY": "16GB",
+        "STORAGE/SSD DISK": "500GB",
+        "BANDWIDTH / TRANSFER": "6TB",
+        "PRICE [ $/mo ]": "$96.00"
     }
 ]
