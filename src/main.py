@@ -1,25 +1,31 @@
-from bs4 import BeautifulSoup
-import requests
+from core.Scraper import Scraper
 from utils import print_data, save_csv, save_json
-import argparse
 
 if __name__ == "__main__":
+    scraper = Scraper()
 
-    parser = argparse.ArgumentParser()
-    parser.add_argument('--print', action="store_const", const=print_data, dest="cmd")
-    parser.add_argument('--save_csv', action="store_const", const=save_csv, dest="cmd")
-    parser.add_argument('--save_json', action="store_const", const=save_json, dest="cmd")
-    args = parser.parse_args()
+    print("Coletando dados do site Vultr...")
+    scraper.vultr()
+    print("Dados coletados com sucesso!\n")
 
-    target = "https://www.vultr.com/products/cloud-compute/#pricing"
-    response = requests.get(target)
-    soup = BeautifulSoup(response.text, "html.parser")
-    data = []
+    print("Coletando dados do site Digital Ocean...")
+    scraper.digital_ocean()
+    print("Dados coletados com sucesso!\n")
 
-    table = soup.find("div", attrs=({"data-animation-options": "type:pricingTable;customInit: true;"}))
-    rows = table.find_all("div", attrs=({"class":"pt__row-content"}))
-    for cel in rows:
-        storage, cpu, memory, bandwidth, price = cel.find_all("strong")
-        data.append({"Storage":storage.text, "CPU":cpu.text, "Memory":memory.text, "Bandwidth":bandwidth.text, "Price/mo":price.text})
 
-    args.cmd(data)
+    while True:
+        print("Digite a opção desejada:")
+        print("[1] --print")
+        print("[2] --save_csv")
+        print("[3] --save_json")
+        print("[4] sair")
+        op = int(input())
+
+        if op == 1:
+            print_data(scraper.data)
+        elif op == 2:
+            save_csv(scraper.data)
+        elif op == 3:
+            save_json(scraper.data)
+        else:
+            break
