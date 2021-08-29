@@ -8,7 +8,9 @@ import time
 
 class Scraper:
     def __init__(self):
-        self.data = []
+        self.data = {}
+        self.data["VULTR"] = []
+        self.data["DIGITAL_OCEAN"] = []
 
     def vultr(self):
         target = "https://www.vultr.com/products/cloud-compute/#pricing"
@@ -18,7 +20,7 @@ class Scraper:
         rows = table.find_all("div", attrs=({"class":"pt__row-content"}))
         for cel in rows:
             storage, cpu, memory, bandwidth, price_month = cel.find_all("strong")
-            self.data.append({
+            self.data["VULTR"].append({
                 "CPU / VCPU": cpu.text, 
                 "MEMORY": memory.text, 
                 "STORAGE/SSD DISK": storage.text, 
@@ -47,7 +49,7 @@ class Scraper:
         rows = table.find_all("tr")
         for row in rows:
             memory, vcpu, transfer, ssd, price_hour, price_month, register = row.find_all("td")
-            self.data.append({
+            self.data["DIGITAL_OCEAN"].append({
                 "CPU / VCPU": vcpu.text, 
                 "MEMORY": memory.text, 
                 "STORAGE/SSD DISK": ssd.text, 
