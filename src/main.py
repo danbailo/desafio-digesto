@@ -23,6 +23,7 @@ if __name__ == "__main__":
 
         if op == 1:
             print_data(scraper.data)
+            print()
         elif op == 2:
             save_csv(scraper.data)
             print("Arquivo .csv gravado com sucesso!\n")
