@@ -25,9 +25,8 @@ class Scraper:
                 "BANDWIDTH / TRANSFER": bandwidth.text, 
                 "PRICE [ $/mo ]": price_month.text})            
 
-    def digitalocean(self):
+    def digital_ocean(self):
         #https://www.digitalocean.com/page-data/pricing/page-data.json
-
         target = "https://www.digitalocean.com/pricing#droplet"
 
         options = Options()
