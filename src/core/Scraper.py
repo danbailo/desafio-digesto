@@ -1,5 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
+from selenium import webdriver
+import time
 
 class Scraper:
     def __init__(self):
@@ -20,7 +22,12 @@ class Scraper:
         #https://www.digitalocean.com/page-data/pricing/page-data.json
 
         target = "https://www.digitalocean.com/pricing#droplet"
-        response = requests.get(target)
-        soup = BeautifulSoup(response.text, "html.parser")
 
-        print(soup)
+        driver = webdriver.Firefox(executable_path="./geckodriver")
+        driver.get(target)
+        driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+        time.sleep(1)
+        driver.find_element_by_xpath('//*[@id="heading"]/div[2]/div[1]/a[1]/div').click()
+        print(driver.page_source)
+        driver.close()
+        driver.quit()
