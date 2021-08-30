@@ -18,17 +18,17 @@ if __name__ == "__main__":
         print("[2] --save_csv")
         print("[3] --save_json")
         print("[4] sair")
-        op = int(input())
+        op = input()
         print()
 
-        if op == 1:
+        if op == "1":
             print_data(scraper.data)
             print()
-        elif op == 2:
+        elif op == "2":
             save_csv(scraper.data)
             print("Arquivo .csv gravado com sucesso!\n")
-        elif op == 3:
+        elif op == "3":
             save_json(scraper.data)
             print("Arquivo .json gravado com sucesso!\n")
-        else:
+        elif op == "4":
             break
