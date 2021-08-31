@@ -72,9 +72,12 @@ class Scraper:
             result = price_card[0].find_all("li", attrs={"class":"pricing-card-list-items"})
             if result:
                 ram, vcpu, storage, bandwidth = price_card[0].find_all("li", attrs={"class":"pricing-card-list-items"})
+                # Remove o "/mo*" da string, poderia ser feito com slice, porém, se adicionado mais digitos no número,
+                # iria devolver o valor errado!
+                pricing_card_price = rmv_hexadecimal_char(price_card[1].text).split("/")[0]
                 self.data["HOSTGATOR"].append({
                     "CPU / VCPU": rmv_hexadecimal_char(vcpu.text), 
                     "MEMORY": rmv_hexadecimal_char(ram.text), 
                     "STORAGE/SSD DISK": rmv_hexadecimal_char(storage.text), 
                     "BANDWIDTH / TRANSFER": rmv_hexadecimal_char(bandwidth.text), 
-                    "PRICE [ $/mo ]": rmv_hexadecimal_char(price_card[1].text)})
+                    "PRICE [ $/mo ]": pricing_card_price})
