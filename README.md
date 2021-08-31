@@ -38,7 +38,7 @@ Assim que o programa for executado, basta interagir entre as opções desejadas.
 
 Inicialmente, o segundo scraper tinha como site alvo [https://www.digitalocean.com/pricing/#droplet](https://www.digitalocean.com/pricing/#droplet), porém, aparentemente o mesmo sofreu algumas alterações na estrutura do código fonte desde a data que este desafio foi proposto pela primeira vez (20/01/2021), e atualmente, para realizar o scrape do mesmo, é necessário a utilização do Selenium, mas um dos requisitos do desafio é não utilizar esse framework. Entrei em contato com o desenvolvedor que me enviou a proposta via email e o mesmo me encaminhou o novo site alvo e disse para utilizar este no lugar da DigitalOcean, que no caso é o HostGator, e dessa forma foi possível continuar o desafio respeitando as regras impostas.
 
-Porém, eu já havia desenvolvido o scraper do DigitalOcean enquanto esperava a resposta do desenvolvedor da Digesto. Para o desenvolvimento do mesmo, foi utilizado o Selenium de forma parcial, apenas para carregar o conteúdo do site. O mesmo foi removido do código principal, mas pode ser conferido no commit [449f5c412de12ee463df1a4c8c82dbefd5d78823](https://github.com/danbailo/digesto-challenge/commit/449f5c412de12ee463df1a4c8c82dbefd5d78823).
+Entretanto, eu já havia desenvolvido o scraper do DigitalOcean enquanto esperava a resposta do desenvolvedor da Digesto. Para o desenvolvimento do mesmo, foi utilizado o Selenium de forma parcial, apenas para carregar o conteúdo do site. O mesmo foi removido do código principal, mas pode ser conferido no commit [449f5c412de12ee463df1a4c8c82dbefd5d78823](https://github.com/danbailo/digesto-challenge/commit/449f5c412de12ee463df1a4c8c82dbefd5d78823).
 
 ---
 
