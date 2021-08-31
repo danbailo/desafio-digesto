@@ -28,11 +28,11 @@ Assim que o programa for executado, basta interagir entre as opções desejadas.
 * Opção 1 - Disposição dos dados via CLI.
     * ![](img/cli_data.png)
 
-* Opção 2 - Preview do arquivo `.csv`, o mesmo pode ser encontrado no diretório [/output/](./output/), ou clicando [aqui](./output/data.csv)
-    * ![](img/csv_preview.png)
-
-* Opção 3 - Preview do arquivo `.json`, o mesmo pode ser encontrado no diretório [/output/](./output/), ou clicando [aqui](./output/data.json)    
+* Opção 2 - Preview do arquivo `.json`, o mesmo pode ser encontrado no diretório [/output/](./output/), ou clicando [aqui](./output/data.json)    
     * ![](img/json_preview.png)
+
+* Opção 3 - Preview do arquivo `.csv`, o mesmo pode ser encontrado no diretório [/output/](./output/), ou clicando [aqui](./output/data.csv)
+    * ![](img/csv_preview.png)
 
 ## Comentários e Observações
 
