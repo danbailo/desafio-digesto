@@ -1,10 +1,7 @@
 import re
-import time
 
 import requests
 from bs4 import BeautifulSoup
-from selenium import webdriver
-from selenium.webdriver.firefox.options import Options
 
 
 def rmv_hexadecimal_char(string):
@@ -19,7 +16,6 @@ class Scraper:
         # Atributo para armazenar os dados coletados de forma individual para cada scraper
         self.data = {}
         self.data["VULTR"] = []
-        self.data["DIGITAL_OCEAN"] = []
         self.data["HOSTGATOR"] = []
 
     def vultr(self):
