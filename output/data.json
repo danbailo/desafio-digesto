@@ -71,48 +71,27 @@
             "PRICE [ $/mo ]": "$640"
         }
     ],
-    "DIGITAL_OCEAN": [
+    "HOSTGATOR": [
         {
-            "CPU / VCPU": "1vCPU",
-            "MEMORY": "1GB",
-            "STORAGE/SSD DISK": "25GB",
-            "BANDWIDTH / TRANSFER": "1TB",
-            "PRICE [ $/mo ]": "$6.00"
+            "CPU / VCPU": "2 core CPU",
+            "MEMORY": "2GB RAM",
+            "STORAGE/SSD DISK": "120 GB SSD",
+            "BANDWIDTH / TRANSFER": "Unmetered bandwidth",
+            "PRICE [ $/mo ]": "$19.95"
         },
         {
-            "CPU / VCPU": "1vCPU",
-            "MEMORY": "2GB",
-            "STORAGE/SSD DISK": "50GB",
-            "BANDWIDTH / TRANSFER": "2TB",
-            "PRICE [ $/mo ]": "$12.00"
+            "CPU / VCPU": "2 core CPU",
+            "MEMORY": "4 GB RAM",
+            "STORAGE/SSD DISK": "165 GB SSD",
+            "BANDWIDTH / TRANSFER": "Unmetered bandwidth",
+            "PRICE [ $/mo ]": "$29.95"
         },
         {
-            "CPU / VCPU": "2vCPUs",
-            "MEMORY": "2GB",
-            "STORAGE/SSD DISK": "60GB",
-            "BANDWIDTH / TRANSFER": "3TB",
-            "PRICE [ $/mo ]": "$18.00"
-        },
-        {
-            "CPU / VCPU": "2vCPUs",
-            "MEMORY": "4GB",
-            "STORAGE/SSD DISK": "80GB",
-            "BANDWIDTH / TRANSFER": "4TB",
-            "PRICE [ $/mo ]": "$24.00"
-        },
-        {
-            "CPU / VCPU": "4vCPUs",
-            "MEMORY": "8GB",
-            "STORAGE/SSD DISK": "160GB",
-            "BANDWIDTH / TRANSFER": "5TB",
-            "PRICE [ $/mo ]": "$48.00"
-        },
-        {
-            "CPU / VCPU": "8vCPUs",
-            "MEMORY": "16GB",
-            "STORAGE/SSD DISK": "500GB",
-            "BANDWIDTH / TRANSFER": "6TB",
-            "PRICE [ $/mo ]": "$96.00"
+            "CPU / VCPU": "4 core CPU",
+            "MEMORY": "8 GB RAM",
+            "STORAGE/SSD DISK": "240 GB SSD",
+            "BANDWIDTH / TRANSFER": "Unmetered bandwidth",
+            "PRICE [ $/mo ]": "$39.95"
         }
     ]
 }
