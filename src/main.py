@@ -20,8 +20,8 @@ if __name__ == "__main__":
     while True:
         print("Digite a opção desejada:")
         print("[1] --print")
-        print("[2] --save_csv")
-        print("[3] --save_json")
+        print("[2] --save_json")
+        print("[3] --save_csv")
         print("[4] sair")
         op = input() # Armazena a opção selecionada pelo usuário
         print()
@@ -31,12 +31,12 @@ if __name__ == "__main__":
             print_data(scraper.data)
             print()
         elif op == "2":
+            # Salva os dados coletados num arquivo .json
+            save_json(scraper.data)
+            print("Arquivo .json gravado com sucesso no diretório /output na raiz do projeto!\n")            
+        elif op == "3":
             # Salva os dados coletados num arquivo .csv
             save_csv(scraper.data)
             print("Arquivo .csv gravado com sucesso no diretório /output na raiz do projeto!\n")
-        elif op == "3":
-            # Salva os dados coletados num arquivo .json
-            save_json(scraper.data)
-            print("Arquivo .json gravado com sucesso no diretório /output na raiz do projeto!\n")
         elif op == "4":
             break
