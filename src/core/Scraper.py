@@ -48,65 +48,8 @@ class Scraper:
                 "BANDWIDTH / TRANSFER": bandwidth.text, 
                 "PRICE [ $/mo ]": price_month.text})            
 
-    def digital_ocean(self):
-        """ Scraper 2 - Método responsável por coletar dados da segunda página algo - DigitalOcean """
-        target = "https://www.digitalocean.com/pricing#droplet"
-
-        # Configuração do Selenium
-        options = Options()
-
-        # Atributo onde faz o navegador rodar em segundo plano
-        options.headless=True
-        driver = webdriver.Firefox(executable_path="./geckodriver", options=options)
-        driver.get(target)
-        
-        # "Scrolla" o cursor do navegador para até a parte final do site, para que assim o mesmo
-        # carregue todo conteúdo disponível
-        driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
-        
-        # Tempo de espera implícito - necessário para que garanta que o conteúdo foi carregado
-        # O tempo pode variar de acordo com a velocidade de conexão da rede
-        time.sleep(1)
-        
-        # Procura o elemento responsável por mostrar as apresentar os dados e clica no mesmo, dessa forma
-        # é possível ver o conteúdo no código fonte
-        driver.find_element_by_xpath('//*[@id="heading"]/div[2]/div[1]/a[1]/div').click()
-
-        # Tempo de espera implícito - necessário para garantir que o conteúdo após o click foi carregado
-        time.sleep(1)
-
-        # Procura o elemento responsável por mudar a forma de visualização da tabela, alterando
-        # para a forma de linhas e colunas, fazendo com que fique mais simples a extração de dados
-        driver.find_element_by_xpath('//*[@id="heading"]/div[2]/div/div[1]/div[2]/div[2]').click()
-
-        # Variável que armazena o código fonte do site atual, isto é, o source que o navegador "vê".
-        # Essa página é de fato a página alvo que contém os dados que serão coletados.
-        target_source = driver.page_source
-
-        # Fecha o navegador que está rodando em segundo plano
-        driver.close()
-        driver.quit()
-        
-        # Instância para realizar o parser do HTML e assim realizar a coleta dos dados
-        soup = BeautifulSoup(target_source, "html.parser")
-
-        # Tabela alvo, onde contém todos os dados que serão coletados
-        table = soup.find("table", attrs={"class":"table is-scrollable css-fssu8e is-fullwidth is-striped"}).find("tbody")
-
-        # Linhas da tabela
-        rows = table.find_all("tr")
-        for row in rows:
-            # Dados coletados e armazenados somente os que interessam ao projeto
-            memory, vcpu, transfer, ssd, price_hour, price_month, register = row.find_all("td")
-            self.data["DIGITAL_OCEAN"].append({
-                "CPU / VCPU": vcpu.text, 
-                "MEMORY": memory.text, 
-                "STORAGE/SSD DISK": ssd.text, 
-                "BANDWIDTH / TRANSFER": transfer.text, 
-                "PRICE [ $/mo ]": price_month.text})
-
     def hostgator(self):
-        """ Scraper 3 - Método responsável por coletar dados da terceira página algo - HostGator """
+        """ Scraper 2 - Método responsável por coletar dados da terceira página algo - HostGator """
         target = "https://www.hostgator.com/vps-hosting"        
 
         # Realiza o request para obter a página HTML
