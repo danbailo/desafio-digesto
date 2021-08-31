@@ -1,3 +1,4 @@
+import re
 import time
 
 import requests
@@ -5,7 +6,9 @@ from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.webdriver.firefox.options import Options
 
-import re
+
+def rmv_hexadecimal_char(string):
+    return re.sub(r'[^\x00-\x7f]',r'', string)
 
 
 class Scraper:
@@ -118,11 +121,11 @@ class Scraper:
             if result:
                 ram, vcpu, storage, bandwidth = price_card[0].find_all("li", attrs={"class":"pricing-card-list-items"})
                 self.data["HOSTGATOR"].append({
-                    "CPU / VCPU": re.sub(r'[^\x00-\x7f]',r'', vcpu.text), 
-                    "MEMORY": re.sub(r'[^\x00-\x7f]',r'', ram.text), 
-                    "STORAGE/SSD DISK": re.sub(r'[^\x00-\x7f]',r'', storage.text), 
-                    "BANDWIDTH / TRANSFER": re.sub(r'[^\x00-\x7f]',r'', bandwidth.text), 
-                    "PRICE [ $/mo ]": re.sub(r'[^\x00-\x7f]',r'', price_card[1].text)})
+                    "CPU / VCPU": rmv_hexadecimal_char(vcpu.text), 
+                    "MEMORY": rmv_hexadecimal_char(ram.text), 
+                    "STORAGE/SSD DISK": rmv_hexadecimal_char(storage.text), 
+                    "BANDWIDTH / TRANSFER": rmv_hexadecimal_char(bandwidth.text), 
+                    "PRICE [ $/mo ]": rmv_hexadecimal_char(price_card[1].text)})
         print(self.data)
 
 if __name__ == "__main__":
