@@ -8,6 +8,7 @@ from selenium.webdriver.firefox.options import Options
 
 
 def rmv_hexadecimal_char(string):
+    """ Remove caracteres hexadecimais de uma string """
     return re.sub(r'[^\x00-\x7f]',r'', string)
 
 
@@ -31,7 +32,7 @@ class Scraper:
         # Instância para realizar o parser do HTML e assim realizar a coleta dos dados
         soup = BeautifulSoup(response.text, "html.parser")
 
-        # Tabela alvo, onde contém todos os dados que serão coletados
+        # Tabela alvo, bloco onde contém todos os dados que serão coletados
         table = soup.find("div", attrs={"class": "pt__body js-body"})
 
         # Linhas da tabela
@@ -106,16 +107,28 @@ class Scraper:
 
     def hostgator(self):
         """ Scraper 3 - Método responsável por coletar dados da terceira página algo - HostGator """
+        target = "https://www.hostgator.com/vps-hosting"        
 
-        target = "https://www.hostgator.com/vps-hosting"
+        # Realiza o request para obter a página HTML
         response = requests.get(target)
+
+        # Instância para realizar o parser do HTML e assim realizar a coleta dos dados
         soup = BeautifulSoup(response.text, "html.parser")
+
+        # Container alvo, bloco onde contém todos os dados que serão coletados
         container = soup.find("section", attrs={"class":"pricing-card-container false undefined", "class": "pricing-card-container"})
 
+        # Os cartões onde os dados estão contidos são isolados de forma individual,
+        # aqui também já é o coletado o preço mensal de cada máquina
         price_cards = []
         for price_card_container in container:
-            price_cards.append((price_card_container.find("div", attrs={"class": re.compile("(pricing-card)")}), price_card_container.find("p", attrs={"class":"pricing-card-price"})))
+            # Lista de tuplas contendo o bloco do cartão onde estão as informações da máquina e o preço da mensal da mesma
+            price_cards.append((price_card_container.find("div", attrs={"class": re.compile("(pricing-card)")}),
+                                price_card_container.find("p", attrs={"class":"pricing-card-price"})))
 
+        # Após os dados serem isolados de forma estruturada, foi desenvolvido a lógica para procurar
+        # os valores apenas onde existia um resultado válido. Dessa forma os dados foram
+        # coletados e armazenados no atributo de dados
         for price_card in price_cards:
             result = price_card[0].find_all("li", attrs={"class":"pricing-card-list-items"})
             if result:
@@ -126,10 +139,3 @@ class Scraper:
                     "STORAGE/SSD DISK": rmv_hexadecimal_char(storage.text), 
                     "BANDWIDTH / TRANSFER": rmv_hexadecimal_char(bandwidth.text), 
                     "PRICE [ $/mo ]": rmv_hexadecimal_char(price_card[1].text)})
-        print(self.data)
-
-if __name__ == "__main__":
-    scraper = Scraper()
-
-    scraper.hostgator()
-
