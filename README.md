@@ -38,6 +38,8 @@ Assim que o programa for executado, basta interagir entre as opções desejadas.
 
 Inicialmente, o segundo scraper tinha como site alvo [https://www.digitalocean.com/pricing/#droplet](https://www.digitalocean.com/pricing/#droplet), porém, aparentemente o mesmo sofreu algumas alterações na estrutura do código fonte desde a data que este desafio foi proposto pela primeira vez (20/01/2021), e atualmente, para realizar o scrape do mesmo, é necessário a utilização do Selenium, mas um dos requisitos do desafio é não utilizar esse framework. Entrei em contato com o desenvolvedor que me enviou a proposta via email e o mesmo me encaminhou o novo site alvo e disse para usar o este no lugar da DigitalOcean, dessa forma foi possível continuar o desafio respeitando as regras impostas.
 
+Porém, de qualquer forma, eu havia desenvolvido o scraper para o mesmo utilizando o Selenium de forma parcial, pois neste momento eu estava aguardando resposta do email em que eu havia entrado em contato. O mesmo foi removido do código principal, mas pode ser conferido no commit [449f5c412de12ee463df1a4c8c82dbefd5d78823](https://github.com/danbailo/digesto-challenge/commit/449f5c412de12ee463df1a4c8c82dbefd5d78823).
+
 ---
 
 Sempre que vou desenvolver um crawler/scraper, procuro encapsular e organizar a estrutura alvo num bloco de código. Essa lógica foi utilizada para implementar os dois scrapers presente neste trabalho. Isso garante que nenhuma informação fora desse bloco será coletada, ou seja, não haverá "sujeira" entre os dados e a forma de manipula-los fica mais fácil.
