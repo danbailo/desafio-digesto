@@ -33,10 +33,10 @@ if __name__ == "__main__":
         elif op == "2":
             # Salva os dados coletados num arquivo .json
             save_json(scraper.data)
-            print("Arquivo .json gravado com sucesso no diretório /output na raiz do projeto!\n")            
+            print("Arquivo .json gravado com sucesso no diretório /output/ na raiz do projeto!\n")            
         elif op == "3":
             # Salva os dados coletados num arquivo .csv
             save_csv(scraper.data)
-            print("Arquivo .csv gravado com sucesso no diretório /output na raiz do projeto!\n")
+            print("Arquivo .csv gravado com sucesso no diretório /output/ na raiz do projeto!\n")
         elif op == "4":
             break
