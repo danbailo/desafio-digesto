@@ -5,6 +5,8 @@ from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.webdriver.firefox.options import Options
 
+import re
+
 
 class Scraper:
     def __init__(self):
@@ -14,6 +16,7 @@ class Scraper:
         self.data = {}
         self.data["VULTR"] = []
         self.data["DIGITAL_OCEAN"] = []
+        self.data["HOSTGATOR"] = []
 
     def vultr(self):
         """ Scraper 1 - Método responsável por coletar dados da primeira página algo - Vultr """
@@ -97,3 +100,33 @@ class Scraper:
                 "STORAGE/SSD DISK": ssd.text, 
                 "BANDWIDTH / TRANSFER": transfer.text, 
                 "PRICE [ $/mo ]": price_month.text})
+
+    def hostgator(self):
+        """ Scraper 3 - Método responsável por coletar dados da terceira página algo - HostGator """
+
+        target = "https://www.hostgator.com/vps-hosting"
+        response = requests.get(target)
+        soup = BeautifulSoup(response.text, "html.parser")
+        container = soup.find("section", attrs={"class":"pricing-card-container false undefined", "class": "pricing-card-container"})
+
+        price_cards = []
+        for price_card_container in container:
+            price_cards.append((price_card_container.find("div", attrs={"class": re.compile("(pricing-card)")}), price_card_container.find("p", attrs={"class":"pricing-card-price"})))
+
+        for price_card in price_cards:
+            result = price_card[0].find_all("li", attrs={"class":"pricing-card-list-items"})
+            if result:
+                ram, vcpu, storage, bandwidth = price_card[0].find_all("li", attrs={"class":"pricing-card-list-items"})
+                self.data["HOSTGATOR"].append({
+                    "CPU / VCPU": re.sub(r'[^\x00-\x7f]',r'', vcpu.text), 
+                    "MEMORY": re.sub(r'[^\x00-\x7f]',r'', ram.text), 
+                    "STORAGE/SSD DISK": re.sub(r'[^\x00-\x7f]',r'', storage.text), 
+                    "BANDWIDTH / TRANSFER": re.sub(r'[^\x00-\x7f]',r'', bandwidth.text), 
+                    "PRICE [ $/mo ]": re.sub(r'[^\x00-\x7f]',r'', price_card[1].text)})
+        print(self.data)
+
+if __name__ == "__main__":
+    scraper = Scraper()
+
+    scraper.hostgator()
+
