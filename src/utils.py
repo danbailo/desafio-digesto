@@ -1,26 +1,29 @@
 import csv
 import json
 
+from tabulate import tabulate
+
+# Headers para as tabelas, no formato do enunciado do desafio
+headers = ["CPU / VCPU","MEMORY","STORAGE / SSD DISK","BANDWIDTH / TRANSFER","PRICE [ $/mo ]"]
 
 def print_data(data):
     """ Printa os dados na linha de comando """
     # Printa o header na tela, separando os dados por tabulação
-    print("CPU / VCPU\t\tMEMORY\t\tSTORAGE / SSD DISK\t\tBANDWIDTH / TRANSFER\t\tPRICE [ $/mo ]\n")
     for k,v in data.items():
-        # Printa os dados linha a linha na tela, divido por scraper
         print(k)
+        temp_table = []
         for row in v:
-            cpu, memory, storage, bandwidth, price_month = row.values()
-            # Mostra os dados, separando os por tabulação
-            print(f"{cpu}\t\t\t{memory}\t\t\t{storage}\t\t\t{bandwidth}\t\t\t{price_month}")
+            # Cria uma tabela para printar os dados de forma mais agradável para o usuário
+            temp_table.append(list(row.values()))
+        print(tabulate(temp_table, headers=headers, tablefmt="github"))
         print()
 
-def save_csv(data):
+def save_csv(data): 
     """ Salva os dados coletados num arquivo .csv """
     with open("output/data.csv", "w") as file:        
         writer = csv.writer(file)
         # Grava o header no arquivo .csv
-        writer.writerow("CPU / VCPU,MEMORY,STORAGE / SSD DISK,BANDWIDTH / TRANSFER,PRICE [ $/mo ]".split(","))
+        writer.writerow(headers)
         for k,v in data.items():
             # Grava os dados linha a linha no arquivo gerado, divido por scraper
             writer.writerow([k])
