@@ -12,8 +12,8 @@ if __name__ == "__main__":
     print("Dados coletados com sucesso!\n")
 
     # Executa o Scraper 2
-    print("Coletando dados do site Digital Ocean...")
-    scraper.digital_ocean()
+    print("Coletando dados do site HostGator...")
+    scraper.hostgator()
     print("Dados coletados com sucesso!\n")
 
     # Menu de operações
