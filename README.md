@@ -89,7 +89,6 @@ for price_card in price_cards:
             "PRICE [ $/mo ]": pricing_card_price})
 ```
 
-Quando os dados estão organizados numa estrutura, a coleta e manipulação dos mesmos fica mais facil. 
 Essa foi uma breve explicação da lógica utilizada para o desenvolvimento do projeto.
 
 ## Agradecimentos
