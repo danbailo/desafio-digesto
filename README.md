@@ -74,7 +74,7 @@ for price_card_container in container:
                         price_card_container.find("p", attrs={"class":"pricing-card-price"})))
 ```
 
-No scraper da HostGator foi preciso realizar a limpeza dos dados antes de armazená-los de fato, pois ao realizar a coleta, estes apresentavam caracteres hexadecimais em sua estrutura. Após realizar o tratamento utilizando expressões regulares, os mesmos foram armazenados.
+Neste scraper, foi preciso realizar a limpeza dos dados antes de armazená-los de fato, pois ao realizar a coleta, estes apresentavam caracteres hexadecimais em sua estrutura. Após realizar o tratamento utilizando expressões regulares, os mesmos foram armazenados.
 ```python
 for price_card in price_cards:
     result = price_card[0].find_all("li", attrs={"class":"pricing-card-list-items"})
